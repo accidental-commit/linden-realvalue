@@ -6,11 +6,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const refreshBtn = document.getElementById("refreshBtn");
   const currencySelect = document.getElementById("currencySelect");
   const displayModeSelect = document.getElementById("displayModeSelect");
-  const multiplierInput = document.getElementById("multiplierInput");
   const saveBtn = document.getElementById("saveBtn");
 
   function loadState() {
-    chrome.storage.local.get(["lindexRate", "fiatRates", "lastUpdated", "userCurrency", "displayMode", "customMultiplier"], (data) => {
+    chrome.storage.local.get(["lindexRate", "fiatRates", "lastUpdated", "userCurrency", "displayMode"], (data) => {
       const rate = data.lindexRate || 250.0;
       const userCurr = data.userCurrency || "USD";
       const fiatRate = (data.fiatRates && data.fiatRates[userCurr]) || 1.0;
@@ -31,9 +30,6 @@ document.addEventListener("DOMContentLoaded", () => {
       if (data.displayMode) {
         displayModeSelect.value = data.displayMode;
       }
-      if (data.customMultiplier) {
-        multiplierInput.value = data.customMultiplier;
-      }
     });
   }
 
@@ -47,9 +43,8 @@ document.addEventListener("DOMContentLoaded", () => {
   saveBtn.addEventListener("click", () => {
     const userCurrency = currencySelect.value;
     const displayMode = displayModeSelect.value;
-    const customMultiplier = parseFloat(multiplierInput.value) || 1.0;
 
-    chrome.storage.local.set({ userCurrency, displayMode, customMultiplier }, () => {
+    chrome.storage.local.set({ userCurrency, displayMode }, () => {
       saveBtn.textContent = "Saved!";
       setTimeout(() => {
         saveBtn.textContent = "Save Settings";

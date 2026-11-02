@@ -143,14 +143,13 @@ chrome.alarms.onAlarm.addListener((alarm) => {
 // Respond to content script requests
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   if (request.action === "getRate") {
-    chrome.storage.local.get(["lindexRate", "fiatRates", "lastUpdated", "userCurrency", "displayMode", "customMultiplier"], (data) => {
+    chrome.storage.local.get(["lindexRate", "fiatRates", "lastUpdated", "userCurrency", "displayMode"], (data) => {
       sendResponse({
         rate: data.lindexRate || 250.0,
         fiatRates: data.fiatRates || DEFAULT_RATES,
         lastUpdated: data.lastUpdated || Date.now(),
         userCurrency: data.userCurrency || "USD",
-        displayMode: data.displayMode || "append",
-        customMultiplier: data.customMultiplier || 1.0
+        displayMode: data.displayMode || "append"
       });
     });
     return true; // Keep message channel open for async response

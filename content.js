@@ -3,7 +3,6 @@
 let currentRate = 250.0;
 let userCurrency = "USD";
 let displayMode = "append"; // 'append' or 'replace'
-let customMultiplier = 1.0;
 let fiatRates = { USD: 1.0, EUR: 0.90, GBP: 0.75, CAD: 1.40, AUD: 1.55, JPY: 155.0 };
 
 function getFiatRate(currency) {
@@ -46,10 +45,9 @@ function processPriceElement(el) {
   // Real world value calculation:
   // 1. Convert L$ to USD: USD = L$ / LindeX Rate
   // 2. Convert USD to target fiat: Target = USD * forexRate[currency]
-  // 3. Apply custom user multiplier (fee/markup)
   const usdValue = lindens / currentRate;
   const fiatMultiplier = getFiatRate(userCurrency);
-  const fiatValue = usdValue * fiatMultiplier * customMultiplier;
+  const fiatValue = usdValue * fiatMultiplier;
   const formattedFiat = formatFiat(fiatValue, userCurrency);
 
   // Mark as processed
@@ -134,7 +132,6 @@ function init() {
       fiatRates = response.fiatRates || fiatRates;
       userCurrency = response.userCurrency || "USD";
       displayMode = response.displayMode || "append";
-      customMultiplier = response.customMultiplier || 1.0;
     }
     scanAndConvert();
     setupObserver();
@@ -147,7 +144,6 @@ function init() {
       if (changes.fiatRates) fiatRates = changes.fiatRates.newValue;
       if (changes.userCurrency) userCurrency = changes.userCurrency.newValue;
       if (changes.displayMode) displayMode = changes.displayMode.newValue;
-      if (changes.customMultiplier) customMultiplier = changes.customMultiplier.newValue;
 
       // Revert any replaced text back to original L$ string
       document.querySelectorAll(".sl-real-currency-replaced").forEach((el) => {
