@@ -2,7 +2,7 @@
 
 // Primary feed: pre-parsed hourly rate from repository cache
 // Fallback: direct Linden Lab LindeX XML endpoint
-const GITHUB_RATE_URL = "https://raw.githubusercontent.com/accidental-commit/sl-marketplace-currency-converter/master/rate.json";
+const GITHUB_RATE_URL = "https://raw.githubusercontent.com/accidental-commit/linden-realvalue/master/rate.json";
 const LINDEX_DIRECT_URL = "https://api.secondlife.com/datafeeds/lindex.xml";
 const FOREX_DIRECT_URL = "https://open.er-api.com/v6/latest/USD";
 const ALARM_NAME = "refresh_lindex_rate";

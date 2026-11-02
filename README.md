@@ -16,7 +16,7 @@ A browser extension (Chrome, Edge, Brave, and other Chromium browsers) that inje
 
 **Option A (Using Git):**
 ```bash
-git clone https://github.com/accidental-commit/sl-marketplace-currency-converter.git
+git clone https://github.com/accidental-commit/linden-realvalue.git
 ```
 
 **Option B (Download ZIP):**
@@ -33,6 +33,6 @@ git clone https://github.com/accidental-commit/sl-marketplace-currency-converter
    - **Edge**: `edge://extensions/`
 2. Turn on **Developer mode** (usually a toggle in the top-right corner).
 3. Click **Load unpacked**.
-4. Select the unpacked `sl-marketplace-currency-converter` directory containing `manifest.json`.
+4. Select the unpacked `linden-realvalue` directory containing `manifest.json`.
 5. Visit [Second Life Marketplace](https://marketplace.secondlife.com/) and browse any listing or category!
 
