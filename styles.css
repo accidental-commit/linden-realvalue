@@ -25,10 +25,34 @@
   white-space: nowrap;
 }
 
-/* Ensure the parent price container does not wrap prematurely */
-[data-sl-converted="true"],
-.price:has(.sl-real-currency-badge),
-.item-price:has(.sl-real-currency-badge) {
+/* Ensure general price containers do not wrap prematurely */
+[data-sl-converted="true"]:not(td):not(th),
+.price:has(.sl-real-currency-badge):not(td):not(th),
+.item-price:has(.sl-real-currency-badge):not(td):not(th) {
   white-space: nowrap !important;
+}
+
+/* In narrow table columns (such as the Wishlist and order history), stack the badge neatly underneath */
+td.list-price,
+.list-price,
+td:has(.sl-real-currency-badge) {
+  white-space: normal !important;
+  min-width: 70px;
+}
+
+td.list-price [data-sl-converted="true"],
+.list-price [data-sl-converted="true"],
+td [data-sl-converted="true"] {
+  display: inline-block;
+  white-space: normal !important;
+}
+
+td.list-price .sl-real-currency-badge,
+.list-price .sl-real-currency-badge,
+td .sl-real-currency-badge {
+  display: block;
+  margin-left: 0;
+  margin-top: 2px;
+  width: fit-content;
 }
 
