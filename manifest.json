@@ -10,6 +10,7 @@
   "host_permissions": [
     "https://raw.githubusercontent.com/*",
     "https://api.secondlife.com/*",
+    "https://open.er-api.com/*",
     "https://marketplace.secondlife.com/*"
   ],
   "background": {
