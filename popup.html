@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Linden RealValue</title>
@@ -57,6 +58,7 @@
       background: var(--bg-color);
       transition: background-color 0.15s ease, color 0.15s ease;
     }
+
     h2 {
       font-size: 14px;
       margin: 0 0 10px 0;
@@ -65,9 +67,11 @@
       align-items: center;
       gap: 6px;
     }
+
     .field {
       margin-bottom: 10px;
     }
+
     label {
       display: block;
       font-size: 11px;
@@ -77,6 +81,7 @@
       text-transform: uppercase;
       letter-spacing: 0.3px;
     }
+
     .stat-box {
       background: var(--card-bg);
       border: 1px solid var(--card-border);
@@ -85,18 +90,22 @@
       margin-bottom: 12px;
       box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
     }
+
     .stat-val {
       font-size: 15px;
       font-weight: bold;
       color: var(--stat-rate);
       margin-top: 2px;
     }
+
     .stat-time {
       font-size: 11px;
       color: var(--subtext-color);
       margin-top: 3px;
     }
-    select, input {
+
+    select,
+    input {
       width: 100%;
       box-sizing: border-box;
       padding: 6px 8px;
@@ -107,9 +116,12 @@
       color: var(--input-text);
       outline: none;
     }
-    select:focus, input:focus {
+
+    select:focus,
+    input:focus {
       border-color: var(--btn-primary-bg);
     }
+
     button {
       width: 100%;
       background: var(--btn-primary-bg);
@@ -122,9 +134,11 @@
       margin-top: 4px;
       transition: background-color 0.1s ease;
     }
+
     button:hover {
       background: var(--btn-primary-hover);
     }
+
     .refresh-btn {
       background: var(--btn-secondary-bg);
       color: var(--btn-secondary-text);
@@ -133,11 +147,13 @@
       padding: 5px;
       font-size: 12px;
     }
+
     .refresh-btn:hover {
       background: var(--btn-secondary-hover);
     }
   </style>
 </head>
+
 <body>
   <h2>Linden RealValue</h2>
 
@@ -173,5 +189,5 @@
 
   <script src="popup.js"></script>
 </body>
-</html>
 
+</html>

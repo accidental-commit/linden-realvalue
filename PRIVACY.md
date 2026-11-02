@@ -31,3 +31,4 @@ We do not sell, rent, trade, or share user data with any third parties.
 ## 5. Contact
 If you have any questions about this Privacy Policy, you can open an issue on the repository:  
 https://github.com/accidental-commit/linden-realvalue
+
