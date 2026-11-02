@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Linden RealValue</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg-color: #fafafa;
+      --text-color: #222;
+      --title-color: #111;
+      --label-color: #666;
+      --card-bg: #ffffff;
+      --card-border: #e0e0e0;
+      --input-bg: #ffffff;
+      --input-border: #ccc;
+      --input-text: #222;
+      --stat-rate: #2b7a0b;
+      --subtext-color: #888;
+      --btn-secondary-bg: #ececec;
+      --btn-secondary-hover: #ddd;
+      --btn-secondary-text: #333;
+      --btn-primary-bg: #0073ea;
+      --btn-primary-hover: #005bb5;
+      --btn-primary-text: #ffffff;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg-color: #1e1e24;
+        --text-color: #e4e4e7;
+        --title-color: #ffffff;
+        --label-color: #a1a1aa;
+        --card-bg: #272730;
+        --card-border: #3f3f46;
+        --input-bg: #18181b;
+        --input-border: #52525b;
+        --input-text: #f4f4f5;
+        --stat-rate: #4ade80;
+        --subtext-color: #a1a1aa;
+        --btn-secondary-bg: #3f3f46;
+        --btn-secondary-hover: #52525b;
+        --btn-secondary-text: #f4f4f5;
+        --btn-primary-bg: #2563eb;
+        --btn-primary-hover: #1d4ed8;
+        --btn-primary-text: #ffffff;
+      }
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      font-size: 13px;
+      margin: 0;
+      padding: 12px 14px;
+      width: 240px;
+      color: var(--text-color);
+      background: var(--bg-color);
+      transition: background-color 0.15s ease, color 0.15s ease;
+    }
+    h2 {
+      font-size: 14px;
+      margin: 0 0 10px 0;
+      color: var(--title-color);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .field {
+      margin-bottom: 10px;
+    }
+    label {
+      display: block;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--label-color);
+      margin-bottom: 3px;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+    .stat-box {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 6px;
+      padding: 8px 10px;
+      margin-bottom: 12px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+    }
+    .stat-val {
+      font-size: 15px;
+      font-weight: bold;
+      color: var(--stat-rate);
+      margin-top: 2px;
+    }
+    .stat-time {
+      font-size: 11px;
+      color: var(--subtext-color);
+      margin-top: 3px;
+    }
+    select, input {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 6px 8px;
+      border: 1px solid var(--input-border);
+      border-radius: 5px;
+      font-size: 13px;
+      background: var(--input-bg);
+      color: var(--input-text);
+      outline: none;
+    }
+    select:focus, input:focus {
+      border-color: var(--btn-primary-bg);
+    }
+    button {
+      width: 100%;
+      background: var(--btn-primary-bg);
+      color: var(--btn-primary-text);
+      border: none;
+      padding: 7px;
+      border-radius: 5px;
+      font-weight: 600;
+      cursor: pointer;
+      margin-top: 4px;
+      transition: background-color 0.1s ease;
+    }
+    button:hover {
+      background: var(--btn-primary-hover);
+    }
+    .refresh-btn {
+      background: var(--btn-secondary-bg);
+      color: var(--btn-secondary-text);
+      margin-top: 8px;
+      font-weight: 500;
+      padding: 5px;
+      font-size: 12px;
+    }
+    .refresh-btn:hover {
+      background: var(--btn-secondary-hover);
+    }
+  </style>
+</head>
+<body>
+  <h2>Linden RealValue</h2>
+
+  <div class="stat-box">
+    <div>LindeX Live Rate:</div>
+    <div class="stat-val" id="rateDisplay">Loading...</div>
+    <div class="stat-time" id="lastUpdatedDisplay"></div>
+    <button class="refresh-btn" id="refreshBtn">🔄 Refresh Rate Now</button>
+  </div>
+
+  <div class="field">
+    <label for="displayModeSelect">Display Style</label>
+    <select id="displayModeSelect">
+      <option value="append">Show next to L$ (e.g. L$ 250 (~$1.00))</option>
+      <option value="replace">Replace L$ completely (e.g. ~$1.00)</option>
+    </select>
+  </div>
+
+  <div class="field">
+    <label for="currencySelect">Target Currency</label>
+    <select id="currencySelect">
+      <option value="USD">USD ($)</option>
+      <option value="EUR">EUR (€)</option>
+      <option value="GBP">GBP (£)</option>
+      <option value="CAD">CAD ($)</option>
+      <option value="AUD">AUD ($)</option>
+      <option value="JPY">JPY (¥)</option>
+    </select>
+  </div>
+
+  <div class="field">
+    <label for="multiplierInput">Currency Conversion / Fee Multiplier</label>
+    <input type="number" id="multiplierInput" step="0.01" value="1.0" title="e.g. 0.92 for EUR or adjust for transaction fees">
+  </div>
+
+  <button id="saveBtn">Save Settings</button>
+
+  <script src="popup.js"></script>
+</body>
+</html>
+
