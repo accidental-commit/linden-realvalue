@@ -1,13 +1,13 @@
 {
-  "rate": 243.84,
+  "rate": 243.31,
   "rates": {
     "USD": 1,
-    "EUR": 0.893269,
-    "GBP": 0.745737,
-    "CAD": 1.39809,
-    "AUD": 1.427896,
-    "JPY": 157.896122
+    "EUR": 0.893426,
+    "GBP": 0.745418,
+    "CAD": 1.399422,
+    "AUD": 1.434205,
+    "JPY": 158.39919
   },
-  "last_updated": "2026-11-04T01:02:01.435Z",
+  "last_updated": "2026-11-04T01:59:55.407Z",
   "source": "LindeX 1-hour volume-weighted average"
 }
