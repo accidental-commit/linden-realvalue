@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Linden RealValue - SL Marketplace Converter",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Displays estimated real-world currency value next to Linden Dollar (L$) prices on Second Life Marketplace using live LindeX rates.",
   "permissions": [
     "storage",
