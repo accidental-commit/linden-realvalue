@@ -1,5 +1,5 @@
 {
-  "rate": 243.24,
+  "rate": 243.62,
   "rates": {
     "USD": 1,
     "EUR": 0.896118,
@@ -8,6 +8,6 @@
     "AUD": 1.454956,
     "JPY": 158.368984
   },
-  "last_updated": "2026-11-07T12:50:53.050Z",
+  "last_updated": "2026-11-07T13:52:17.225Z",
   "source": "LindeX 1-hour volume-weighted average"
 }
