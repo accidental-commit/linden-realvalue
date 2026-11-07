@@ -11,7 +11,9 @@ A browser extension (Chrome, Edge, Brave, and other Chromium browsers) that inje
 - **Configurable Fiat Currencies**: Switch between USD, EUR, GBP, CAD, AUD, and JPY, with custom fee/conversion multiplier support in the popup settings.
 
 ## How to Install
-
+**Pre-compiled extensions are available below**
+ - [Chrome](https://chromewebstore.google.com/detail/linden-realvalue-sl-marke/fbhkfhgfnachjjejndlbhfcicmmijaio)
+ - [Firefox](https://addons.mozilla.org/en-US/firefox/addon/linden-realvalue/)
 ### 1. Download or Clone the Repository
 
 **Option A (Using Git):**
